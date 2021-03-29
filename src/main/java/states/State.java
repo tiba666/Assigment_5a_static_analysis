@@ -1,3 +1,5 @@
+package states;
+
 public interface State {
 
     ValueSet valuesOf(String variableName);

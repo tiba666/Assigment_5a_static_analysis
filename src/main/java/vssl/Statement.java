@@ -1,5 +1,7 @@
 package vssl;
 
-public interface Statement extends State {
-    public State analyse(State precondition);
+import states.State;
+
+public interface Statement {
+    public State analyse(State[] precondition);
 }
