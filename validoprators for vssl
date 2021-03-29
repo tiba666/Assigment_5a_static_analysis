@@ -1,0 +1,8 @@
+
+
+integer operatorsd a+b , a-b , -a
+
+booleans
+and,or,not
+
+comparators <,<=, == , >= , >
