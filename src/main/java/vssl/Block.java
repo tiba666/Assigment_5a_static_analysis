@@ -3,16 +3,24 @@ package vssl;
 import states.State;
 import states.ValueSet;
 
+import java.util.ArrayList;
 
 
-public class Block implements Statement{
+public class Block implements SyntaxTree {
 
-
-
-
-    @Override
-    public State analyse(State[] precondition) {
-        return null;
+    public SyntaxTree[] getTrees() {
+        return tree;
     }
 
+    private SyntaxTree[] tree;
+
+    public Block(SyntaxTree... tree) {
+        this.tree = tree;
+    }
+
+    @Override
+    public State analyse(State precondition) {
+        State conjunction = precondition.conjunction(precondition);
+        return conjunction;
+    }
 }

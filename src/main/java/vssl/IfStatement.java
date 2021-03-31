@@ -3,7 +3,7 @@ package vssl;
 import states.State;
 import states.ValueSet;
 
-public class IfStatement implements Statement{
+public class IfStatement implements SyntaxTree {
     boolean predicate;
     Block thenBlock;
 
@@ -13,12 +13,11 @@ public class IfStatement implements Statement{
     }
 
     @Override
-    public State analyse(State[] precondition) {
-        State[] condition = precondition;
-        for (State state : precondition)
-        {
-            condition = state.
+    public State analyse(State precondition) {
+        State condition = precondition;
+        for (SyntaxTree tree : thenBlock.getTrees()) {
+            condition = tree.analyse(condition);
         }
-        return condition[0];
+        return condition;
     }
 }
