@@ -18,4 +18,9 @@ public class IfElseStatement implements SyntaxTree{
     public State analyse(State precondition) {
         return null;
     }
+
+    @Override
+    public String printTree() {
+        return null;
+    }
 }

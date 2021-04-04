@@ -7,6 +7,8 @@ public interface State {
     default State conjunction(State other) {  // fancy ord for and
         return new ConjunctionState(this, other);
     }
+    State unite(); //= UnionState(this, other)
+    State intersect();// State = InsersectionState(this, other)
     String setname(String name);
 
 }

@@ -17,6 +17,16 @@ public class Main {
             }
 
             @Override
+            public State unite() {
+                return null;
+            }
+
+            @Override
+            public State intersect() {
+                return null;
+            }
+
+            @Override
             public String setname(String name) {
                 return name;
             }
@@ -33,6 +43,16 @@ public class Main {
             }
 
             @Override
+            public State unite() {
+                return null;
+            }
+
+            @Override
+            public State intersect() {
+                return null;
+            }
+
+            @Override
             public String setname(String name) {
                 return name;
             }
@@ -45,10 +65,11 @@ public class Main {
             }
         };
          */
+
         Program program = new Program(new DefinitionStatement("X"),
                 new IfStatement(true, new Block()));
         for (SyntaxTree tree : program.getTrees()){
-            System.out.println(tree.toString() + "\n");
+            System.out.println(tree.printTree() + "\n");
         }
 
         /*

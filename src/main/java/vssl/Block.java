@@ -23,4 +23,9 @@ public class Block implements SyntaxTree {
         State conjunction = precondition.conjunction(precondition);
         return conjunction;
     }
+
+    @Override
+    public String printTree() {
+        return null;
+    }
 }

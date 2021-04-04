@@ -20,4 +20,9 @@ public class IfStatement implements SyntaxTree {
         }
         return condition;
     }
+
+    @Override
+    public String printTree() {
+        return null;
+    }
 }

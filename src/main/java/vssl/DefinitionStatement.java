@@ -2,7 +2,7 @@ package vssl;
 
 import states.State;
 
-public class DefinitionStatement implements SyntaxTree{
+public class DefinitionStatement implements SyntaxTree {
     private String name;
 
     public DefinitionStatement(String name) {
@@ -11,7 +11,13 @@ public class DefinitionStatement implements SyntaxTree{
 
     @Override
     public State analyse(State precondition) {
-        precondition.setname(name) = Range(0, 0, true);
+        RangeValueSet rangeValueSet = new RangeValueSet(true, 0, 0);
+        precondition.setname(rangeValueSet.toString());
         return precondition;
+    }
+
+    @Override
+    public String printTree() {
+        return "tree info: \n " + name + "";
     }
 }

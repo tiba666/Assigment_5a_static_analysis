@@ -22,4 +22,20 @@ public class ConjunctionState implements State {
     public boolean subStateOf(State other) {
         return false;
     }
+
+    @Override
+    public State unite() {
+        return (State) new UnionState(this.left, this.right);
+    }
+
+    @Override
+    public State intersect() {
+        return (State) new IntersectionState(this.left, this.right);
+    }
+
+    @Override
+    public String setname(String name) {
+        return null;
+    }
+
 }
